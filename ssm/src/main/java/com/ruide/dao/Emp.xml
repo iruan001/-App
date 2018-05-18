@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruide.dao.IDeptDAO">
+	<select id="findAll" resultMap="empmap">
+		select *　from emp
+	</select>
+	<resultMap type="Emp" id="empmap">
+		<id column="EMPNO" property="empno"/>
+		<id column="ENAME" property="ename"/>
+		<id column="JOB" property="job"/>
+		<id column="MGR" property="mgr"/>
+		<id column="HIREDATE" property="hiredate"/>
+		<id column="SALE" property="sale"/>
+		<id column="COMM" property="comm"/>
+		<id column="DEPTNO" property="deptno"/>
+		<association property="dept" column="DEPTNO" javaType="Dept">
+			<id column="DEPTNO" property="deptno"/>
+			<result column="DNAME" property="dname"/>
+			<result column="LOC" property="loc"/>
+		</association>
+	</resultMap>
+</mapper>

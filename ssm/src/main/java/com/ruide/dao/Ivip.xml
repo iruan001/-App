@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.ruide.dao.IIvipDAO">
+	<select id="findAll" resultType="Ivip">
+		 select  VIPID,VIPNAME from  IVIP
+	</select>
+	<insert id="save" parameterType="Ivip">
+		 insert into  IVIP (VIPID,VIPNAME) values (#{VIPID},#{VIPNAME})
+	</insert> 
+</mapper>

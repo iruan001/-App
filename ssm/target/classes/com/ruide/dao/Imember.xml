@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.ruide.dao.IImemberDAO">
+	<select id="findAll" resultType="Imember">
+		 select  IMID,VIPID,IMNAME from  IMEMBER
+	</select>
+	<insert id="save" parameterType="Imember">
+		 insert into  IMEMBER (IMID,VIPID,IMNAME) values (#{IMID},#{VIPID},#{IMNAME})
+	</insert> 
+</mapper>
